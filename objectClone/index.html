@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+    <script>
+        mocha.setup('bdd')
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+    <script>
+        let assert = chai.assert;
+    </script>
+</head>
+
+<body>
+
+<h1>function copyObjDeep(obj)</h1>
+
+<script>
+    function copyObjDeep(obj = test) {
+        if (typeof(obj) !== 'object') return alert('Wrong input');
+
+        let res = {};
+        
+        function cloneObj(o, r = res) {
+            for (let key in o){                
+                if (typeof(o[key]) === 'object') { 
+                     r[key] = {}; 
+                     cloneObj(o[key], r[key]);
+                    } 
+                else {
+                    r[key] = o[key];
+                }
+            }
+        }
+        
+        cloneObj(obj, res);
+        //res.test = null;
+
+        return res;
+    }
+</script>
+    <script src="tests.js"></script>
+    <div id="mocha"></div>
+    <script>
+      mocha.run();
+    </script>
+</body>
+
+</html>
