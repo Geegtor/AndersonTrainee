@@ -11,8 +11,7 @@ const test = {
         },
         isAdmin: true, 
         isUser: false, 
-        bird: "crow", 
-        
+        bird: "crow",         
     };
 
 const rtrn = copyObjDeep(test);
@@ -28,40 +27,9 @@ describe("Object and result with different Link", function() {
         assert.equal(test !== copyObjDeep(), true);
     });
 });
-
-describe("Result have same object keys", function() {     
-
-    for ( let key in test ) {
-        it(`Shoulde be same object key`, function() {
-            assert.equal(key in rtrn, true);
-        })
-    }
-
-    for ( let key in rtrn ) {
-        it(`Shoulde be same object key in origin`, function() {
-            assert.equal(key in test, true);
-        })
-    }
-});
-
-describe("Result have same properties value", function() {     
-    digObj(rtrn);
-
-    function digObj(obj, t = test) {
-        
-        for (let key in obj) {
-            if (typeof( obj[key] ) === 'object') {                 
-                it(`Object properties should have different links`, function() {
-                    assert.equal(rtrn[key] !== t[key], true);
+ 
+describe("Result with compareObjDeep function should be true", function() {     
+    it(`Object properties should have different links and the same value`, function() {
+                    assert.equal(compareObjDeep(test), true);
                 });
-
-                digObj(obj[key], t[key]); 
-            }
-            else {
-                it(`Should have same property value`, function() {
-                    assert.equal(rtrn[key] === test[key], true);
-                });
-            }
-        }
-    }
 }); 
