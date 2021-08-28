@@ -1,33 +1,41 @@
-body{
-    background-color: rgb(192, 192, 192);
-    margin: 0;  
-    box-sizing: border-box;
+body {
+  background-color: rgb(192, 192, 192);
+  box-sizing: border-box;
+
+  text-align: center;
+  font-size: 6vh;
+  margin: 0;
 }
 
-button{
-    font-size: 3vh;
-}
-	
-table { 
-    margin: 10px auto; 
+button {
+  font-size: 6vh;
+  padding: 5px 1vw;
+  border-radius: 45px;
 }
 
-hr { 
-    color: white; 
+table {
+  margin: 10px auto;
 }
 
-.container{
-    margin: auto auto;
-    border-radius: 5vw;
-
-    max-width: 90vw;
-    min-height: 90vh;
-
-    text-align: center;
-    vertical-align: middle;
-    background: rgb(245, 202, 209);
+td {
+  min-width: 16vw;
 }
 
-.hide{
-    display: none;  
+hr {
+  color: white;
+}
+
+.container {
+  margin: auto auto;
+  border-radius: 5vw;
+
+  max-width: 90vw;
+
+  text-align: center;
+  vertical-align: middle;
+  background: rgb(245, 202, 209);
+}
+
+.hide {
+  display: none;
 }
