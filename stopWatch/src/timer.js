@@ -221,5 +221,6 @@ function loadStorage() {
 loadStorage();  */
 
 newTimer.addEventListener('click', () => {
+    console.log('listener added');
     addTimer();
 });
